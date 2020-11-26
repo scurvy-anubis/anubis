@@ -1,0 +1,32 @@
+{
+  "name": "anubis",
+  "version": "1.0.0",
+  "description": "Anubis",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "server-dev": "cd server && yarn dev",
+    "client-dev": "cd client && yarn start",
+    "dev": "concurrently --kill-others-on-fail \"yarn server-dev\" \"yarn client-dev\"",
+    "test": "echo \"No test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "cd server && yarn check",
+      "pre-push": ""
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scurvy-anubis/anubis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/scurvy-anubis/anubis/issues"
+  },
+  "homepage": "https://github.com/scurvy-anubis/anubis#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "husky": "^4.3.0"
+  }
+}
