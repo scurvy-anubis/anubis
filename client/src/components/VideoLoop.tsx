@@ -4,9 +4,10 @@ import makeStyles from '@material-ui/core/styles/makeStyles';
 
 interface VideoLoopProps {
 	videoName: string;
+	playbackSpeed: number;
 }
 
-export const VideoLoop = memo(({ videoName }: VideoLoopProps) => {
+export const VideoLoop = memo(({ videoName, playbackSpeed }: VideoLoopProps) => {
 	const useStyles = makeStyles((/*theme*/) => ({
 		root: {
 			position: 'absolute',
@@ -31,7 +32,7 @@ export const VideoLoop = memo(({ videoName }: VideoLoopProps) => {
 
 	useEffect(() => {
 		if (videoRef && videoRef.current) {
-			videoRef.current.playbackRate = 0.75;
+			videoRef.current.playbackRate = playbackSpeed;
 		}
 	}, []);
 

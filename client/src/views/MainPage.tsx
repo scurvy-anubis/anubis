@@ -61,7 +61,7 @@ export const MainPage = memo(() => {
 
 	return (
 		<Box id="MainPage" className={classes.root}>
-			<VideoLoop videoName="purple-bokeh" />
+			<VideoLoop videoName="purple-bokeh" playbackSpeed={0.75} />
 			<Box className={classes.videoShade1} />
 			<Box className={classes.videoShade2} />
 			<Box className={classes.content}>
