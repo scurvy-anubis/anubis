@@ -54,6 +54,9 @@ export const Masthead = memo(() => {
 				paddingLeft: 0,
 				borderLeft: 'none',
 			},
+			'&:last-of-type': {
+				paddingRight: 0,
+			},
 		},
 		currentPath: {
 			textDecoration: 'none',
