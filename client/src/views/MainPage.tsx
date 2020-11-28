@@ -22,7 +22,7 @@ export const MainPage = memo(() => {
 			fontFamily: theme.typography.fontFamily,
 		},
 		videoShade1: {
-			height: 80,
+			height: 100,
 			backgroundColor: '#000',
 			opacity: 0.75,
 		},
@@ -40,14 +40,14 @@ export const MainPage = memo(() => {
 			color: theme.palette.text.primary,
 		},
 		mastheadContainer: {
-			height: 80,
+			height: 100,
 			maxWidth: 1280,
 			marginLeft: 'auto',
 			marginRight: 'auto',
-			padding: '32px',
+			padding: '0 32px',
 		},
 		pageContainer: {
-			height: 'calc(100% - 80px)',
+			height: 'calc(100% - 100px)',
 			left: 0,
 			top: 80,
 			maxWidth: 1280,
