@@ -17,7 +17,7 @@ class Server {
 	handleGetRequest(req: Request, res: Response) {
 		Logger.log(`Server.handleGetRequest()`);
 		res.send({ msg: 'Hi from the server' });
-	};
+	}
 
 	startExpress() {
 		const expressApp = express();
@@ -26,7 +26,7 @@ class Server {
 		return expressApp.listen(this.port, () => {
 			Logger.log(`Server.handleServerListen() listening. port:${this.port}`);
 		});
-	};
+	}
 
 	startServer() {
 		Logger.log(``);
