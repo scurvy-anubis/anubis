@@ -29,8 +29,9 @@ export const Masthead = memo(() => {
 		rightPart: {},
 		appLogo: {
 			marginLeft: -10,
-			width: 80,
-			height: 80,
+			width: 90,
+			height: 90,
+			filter: 'hue-rotate(315deg)',
 			userSelect: 'none',
 		},
 		appTitle: {

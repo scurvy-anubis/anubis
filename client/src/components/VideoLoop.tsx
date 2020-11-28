@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useRef } from 'react';
 import Box from '@material-ui/core/Box';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 
@@ -27,9 +27,17 @@ export const VideoLoop = memo(({ videoName }: VideoLoopProps) => {
 	}));
 	const classes = useStyles();
 
+	const videoRef = useRef<HTMLVideoElement>(null);
+
+	useEffect(() => {
+		if (videoRef && videoRef.current) {
+			videoRef.current.playbackRate = 0.75;
+		}
+	}, []);
+
 	return (
 		<Box id="VideoLoop" className={classes.root}>
-			<video autoPlay={true} loop={true} muted={true} playsInline={true} className={classes.video}>
+			<video ref={videoRef} autoPlay={true} loop={true} muted={true} playsInline={true} className={classes.video}>
 				<source type="video/mp4" src={`./videos/${videoName}.mp4`} />
 			</video>
 		</Box>
