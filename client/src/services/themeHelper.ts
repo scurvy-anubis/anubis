@@ -4,7 +4,7 @@ import grey from '@material-ui/core/colors/grey';
 import { createMuiTheme } from '@material-ui/core';
 import { Theme } from '@material-ui/core/styles/createMuiTheme';
 
-export const createMyTheme = () => {
+export const createMyTheme: () => Theme = () => {
 	return createMuiTheme({
 		palette: {
 			type: 'dark',
@@ -37,5 +37,5 @@ export const createMyTheme = () => {
 				'"Segoe UI Symbol"',
 			].join(','),
 		},
-	}) as Theme;
+	});
 };
