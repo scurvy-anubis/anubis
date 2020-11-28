@@ -1,7 +1,7 @@
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import common from '@material-ui/core/colors/common';
 import grey from '@material-ui/core/colors/grey';
-import {createMuiTheme} from '@material-ui/core';
+import { createMuiTheme } from '@material-ui/core';
 
 export const createMyTheme = () => {
 	return createMuiTheme({
