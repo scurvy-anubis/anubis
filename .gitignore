@@ -1,13 +1,13 @@
-# NPM / YARN
+# npm and yarn
 node_modules/
 npm-debug.log
 yarn-error.log
 
-# IntelliJ IDE
+# intellij ide
 *.iml
 .idea/
 
-# VSCode IDE
+# vscode ide
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json

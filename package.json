@@ -5,6 +5,10 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
+    "prettier": "cd server && yarn prettier && cd ../client && yarn prettier && cd ..",
+    "lint": "cd server && yarn lint && cd ../client && yarn lint && cd ..",
+    "tsc": "cd server && yarn tsc && cd ../client && yarn tsc && cd ..",
+    "compile": "cd server && yarn compile && cd ../client && yarn compile && cd ..",
     "server-dev": "cd server && yarn dev",
     "client-dev": "cd client && yarn start",
     "dev": "concurrently --kill-others-on-fail \"yarn server-dev\" \"yarn client-dev\"",
@@ -12,7 +16,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "cd server && yarn check",
+      "pre-commit": "yarn compile",
       "pre-push": ""
     }
   },
