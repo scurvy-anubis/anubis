@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import AppBar from '@material-ui/core/AppBar/AppBar';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import Box from '@material-ui/core/Box/Box';
 import makeStyles from '@material-ui/core/styles/makeStyles';
@@ -65,7 +64,7 @@ export const Masthead = memo(() => {
 	const myLocation = useLocation();
 
 	return (
-		<AppBar id="Masthead" position="static" className={classes.root}>
+		<Box id="Masthead" position="static" className={classes.root}>
 			<Box className={classes.content}>
 				<Box className={classes.navLinks}>
 					<List className={classes.list}>
@@ -82,6 +81,6 @@ export const Masthead = memo(() => {
 					</List>
 				</Box>
 			</Box>
-		</AppBar>
+		</Box>
 	);
 });
