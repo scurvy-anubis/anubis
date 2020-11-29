@@ -7,7 +7,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import { Typography } from '@material-ui/core';
-import anubisLogo from '../images/anubis-logo.jpg';
+//import anubisLogo from '../images/anubis-logo.jpg';
+import anubisLogo from '../images/anubis-head.png';
 
 export const Masthead = memo(() => {
 	const useStyles = makeStyles((theme) => ({
@@ -28,15 +29,16 @@ export const Masthead = memo(() => {
 		},
 		rightPart: {},
 		appLogo: {
-			marginLeft: -10,
-			width: 90,
-			height: 90,
+			height: 60,
 			userSelect: 'none',
-			filter: 'hue-rotate(315deg)',
+			filter: 'hue-rotate(-10deg)',
 			// animation: 'app-logo-color-animation 30s linear infinite alternate',
 		},
-		appTitle: {
-			marginLeft: 4,
+		appTitle1: {
+			fontFamily: 'Macondo, Play, sans-serif',
+			userSelect: 'none',
+		},
+		appTitle2: {
 			fontFamily: 'Macondo, Play, sans-serif',
 			userSelect: 'none',
 		},
@@ -91,8 +93,9 @@ export const Masthead = memo(() => {
 		<Box id="Masthead" position="static" className={classes.root}>
 			<Box className={classes.content}>
 				<Box className={classes.leftPart}>
+					<Typography variant="h4" className={classes.appTitle1}>{`Anubis`}</Typography>
 					<img src={anubisLogo} alt="logo" className={classes.appLogo} />
-					<Typography variant="h4" className={classes.appTitle}>{`Anubis Games`}</Typography>
+					<Typography variant="h4" className={classes.appTitle2}>{`Games`}</Typography>
 				</Box>
 				<Box className={classes.rightPart}>
 					<Box className={classes.navLinks}>
