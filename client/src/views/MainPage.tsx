@@ -28,8 +28,9 @@ export const MainPage = memo(() => {
 		},
 		videoShade2: {
 			height: 'calc(100% - 80px)',
-			backgroundColor: '#000',
 			opacity: 0.25,
+			backgroundColor: '#000',
+			// animation: 'video-loop-color-animation 30s linear infinite alternate',
 		},
 		content: {
 			position: 'absolute',

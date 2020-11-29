@@ -31,8 +31,9 @@ export const Masthead = memo(() => {
 			marginLeft: -10,
 			width: 90,
 			height: 90,
-			filter: 'hue-rotate(315deg)',
 			userSelect: 'none',
+			filter: 'hue-rotate(315deg)',
+			// animation: 'app-logo-color-animation 30s linear infinite alternate',
 		},
 		appTitle: {
 			marginLeft: 4,
