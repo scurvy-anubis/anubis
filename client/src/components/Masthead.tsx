@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import Box from '@material-ui/core/Box/Box';
 import List from '@material-ui/core/List';
@@ -7,7 +7,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import { Typography } from '@material-ui/core';
-//import anubisLogo from '../images/anubis-logo.jpg';
 import anubisLogo from '../images/anubis-head.png';
 
 export const Masthead = memo(() => {
@@ -26,21 +25,6 @@ export const Masthead = memo(() => {
 		leftPart: {
 			display: 'flex',
 			alignItems: 'center',
-		},
-		rightPart: {},
-		appLogo: {
-			height: 60,
-			userSelect: 'none',
-			filter: 'hue-rotate(-10deg)',
-			// animation: 'app-logo-color-animation 30s linear infinite alternate',
-		},
-		appTitle1: {
-			fontFamily: 'Macondo, Play, sans-serif',
-			userSelect: 'none',
-		},
-		appTitle2: {
-			fontFamily: 'Macondo, Play, sans-serif',
-			userSelect: 'none',
 		},
 		navLinks: {},
 		list: {
@@ -78,6 +62,29 @@ export const Masthead = memo(() => {
 				color: `${blueGrey[300]}`,
 			},
 		},
+		centerPart: {
+			position: 'absolute',
+			left: '50%',
+			transform: 'translateX(-50%)',
+			display: 'flex',
+			alignItems: 'center',
+			cursor: 'pointer',
+		},
+		appLogo: {
+			height: 60,
+			userSelect: 'none',
+			filter: 'hue-rotate(-10deg)',
+			// animation: 'app-logo-color-animation 30s linear infinite alternate',
+		},
+		appTitle1: {
+			fontFamily: 'Macondo, Play, sans-serif',
+			userSelect: 'none',
+		},
+		appTitle2: {
+			fontFamily: 'Macondo, Play, sans-serif',
+			userSelect: 'none',
+		},
+		rightPart: {},
 	}));
 	const classes = useStyles();
 
@@ -89,15 +96,16 @@ export const Masthead = memo(() => {
 
 	const myLocation = useLocation();
 
+	const history = useHistory();
+
+	const handleClickHomeIcon = () => {
+		history.push('/');
+	};
+
 	return (
 		<Box id="Masthead" position="static" className={classes.root}>
 			<Box className={classes.content}>
 				<Box className={classes.leftPart}>
-					<Typography variant="h4" className={classes.appTitle1}>{`Anubis`}</Typography>
-					<img src={anubisLogo} alt="logo" className={classes.appLogo} />
-					<Typography variant="h4" className={classes.appTitle2}>{`Games`}</Typography>
-				</Box>
-				<Box className={classes.rightPart}>
 					<Box className={classes.navLinks}>
 						<List className={classes.list}>
 							{pageLinks.map((link, index) => (
@@ -112,6 +120,14 @@ export const Masthead = memo(() => {
 							))}
 						</List>
 					</Box>
+				</Box>
+				<Box onClick={handleClickHomeIcon} className={classes.centerPart}>
+					<Typography variant="h4" className={classes.appTitle1}>{`Anubis`}</Typography>
+					<img src={anubisLogo} alt="logo" className={classes.appLogo} />
+					<Typography variant="h4" className={classes.appTitle2}>{`Games`}</Typography>
+				</Box>
+				<Box className={classes.rightPart}>
+					<Typography className={classes.link}>{`Login`}</Typography>
 				</Box>
 			</Box>
 		</Box>
