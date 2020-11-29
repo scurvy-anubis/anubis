@@ -22,11 +22,13 @@ export const MainPage = memo(() => {
 			fontFamily: theme.typography.fontFamily,
 		},
 		videoShade1: {
+			position: 'relative',
 			height: 100,
 			backgroundColor: '#000',
 			opacity: 0.75,
 		},
 		videoShade2: {
+			position: 'relative',
 			height: 'calc(100% - 80px)',
 			opacity: 0.25,
 			backgroundColor: '#000',
