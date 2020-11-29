@@ -4,10 +4,11 @@ import makeStyles from '@material-ui/core/styles/makeStyles';
 
 interface VideoLoopProps {
 	videoName: string;
-	playbackSpeed: number;
+	playbackSpeed?: number;
+	blurPixels?: number;
 }
 
-export const VideoLoop = memo(({ videoName, playbackSpeed }: VideoLoopProps) => {
+export const VideoLoop = memo(({ videoName, playbackSpeed, blurPixels }: VideoLoopProps) => {
 	const useStyles = makeStyles((/*theme*/) => ({
 		root: {
 			position: 'absolute',
@@ -32,7 +33,12 @@ export const VideoLoop = memo(({ videoName, playbackSpeed }: VideoLoopProps) => 
 
 	useEffect(() => {
 		if (videoRef && videoRef.current) {
-			videoRef.current.playbackRate = playbackSpeed;
+			if (playbackSpeed && playbackSpeed < 1) {
+				videoRef.current.playbackRate = playbackSpeed;
+			}
+			if (blurPixels && blurPixels > 0) {
+				videoRef.current.style.filter = `blur(${blurPixels}px`;
+			}
 		}
 	}, []);
 

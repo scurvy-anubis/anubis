@@ -20,6 +20,7 @@ export const MainPage = memo(() => {
 			backgroundColor: theme.palette.background.default,
 			color: theme.palette.text.primary,
 			fontFamily: theme.typography.fontFamily,
+			animation: 'fade-in-animation 3s ease-in-out',
 		},
 		videoShade1: {
 			position: 'relative',
@@ -32,7 +33,7 @@ export const MainPage = memo(() => {
 			height: 'calc(100% - 80px)',
 			opacity: 0.25,
 			backgroundColor: '#000',
-			// animation: 'video-loop-color-animation 30s linear infinite alternate',
+			animation: 'video-loop-color-animation 20s linear infinite',
 		},
 		content: {
 			position: 'absolute',
@@ -64,7 +65,7 @@ export const MainPage = memo(() => {
 
 	return (
 		<Box id="MainPage" className={classes.root}>
-			<VideoLoop videoName="purple-bokeh" playbackSpeed={0.75} />
+			<VideoLoop videoName="purple-bokeh" playbackSpeed={0.5} blurPixels={0} />
 			<Box className={classes.videoShade1} />
 			<Box className={classes.videoShade2} />
 			<Box className={classes.content}>
